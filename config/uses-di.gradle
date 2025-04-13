@@ -1,0 +1,20 @@
+/**
+ * This template is used for modules that want to utilize dependency injection.
+ *
+ * It includes the common dependencies.
+ *
+ * NOTE: the including file must already have declared the relevant plugins:
+ *
+ * ```
+ * plugins {
+ *   alias(libs.plugins.dagger.hilt)
+ *   alias(libs.plugins.ksp)
+ *   ...
+ * }
+ * ```
+ */
+
+dependencies {
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+}

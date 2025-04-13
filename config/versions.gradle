@@ -1,0 +1,8 @@
+ext {
+    compile_sdk_version = 34
+    target_sdk_version = 34
+    min_sdk_version = 26
+    // this value determines if the different warning and error popups are shown.
+    // If we want to get rid of older versions, increment this value so the users with the now minversion will be addressed early.
+    upcomingMinSdkVersion = min_sdk_version
+}

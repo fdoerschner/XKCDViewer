@@ -1,0 +1,51 @@
+/**
+ * This template is used for all library modules (non `androidApp..`) in our project.
+ *
+ * It includes a common android {} setup.
+ */
+
+apply from: rootProject.file('./config/uses-unit-tests.gradle')
+apply from: rootProject.file('./config/uses-ui-tests.gradle')
+
+android {
+    compileSdk libs.versions.compileSdk.get().toInteger()
+
+    defaultConfig {
+        minSdk libs.versions.minSdk.get().toInteger() // Use the provided value, or set a default
+        targetSdk libs.versions.compileSdk.get().toInteger()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            // Since our libraries are compiled as part of our app, R8 rules should be placed inside `consumer-rules.pro`.
+            // `proguard-rules.pro` will only have an effect when a library is compiled standalone, so ignore them.
+            // proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        staging.initWith(buildTypes.release)
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+        freeCompilerArgs += [
+                "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
+                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                "-opt-in=kotlin.RequiresOptIn",
+                "-Xjvm-default=all"
+        ]
+    }
+}
+
+dependencies {
+    implementation(libs.androidx.core.ktx)
+
+    implementation(libs.timber)
+}

@@ -1,0 +1,21 @@
+/**
+ * This template is used for modules that want to utilize Jetpack Compose.
+ *
+ * It includes the android {} setup, as well as basic dependencies considered common to all implementors.
+ */
+
+android {
+    buildFeatures {
+        compose true
+    }
+}
+
+dependencies {
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.bundles.compose.basics)
+
+    debugImplementation(libs.androidx.ui.tooling)
+
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+}

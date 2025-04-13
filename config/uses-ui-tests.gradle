@@ -1,0 +1,10 @@
+/**
+ * This template is used for modules that want to utilize UI testing.
+ *
+ * It includes the common dependencies used for our test setup.
+ */
+
+dependencies {
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+}

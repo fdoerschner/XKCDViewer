@@ -1,0 +1,69 @@
+complexity:
+  TooManyFunctions:
+    thresholdInFiles: 30
+    ignoreOverridden: true
+    excludes: [ '**/di/**', '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**' ]
+  LongParameterList:
+    excludes: [ '**/di/**', '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**' ]
+    ignoreAnnotated:
+      [ 'Composable' ]
+  CyclomaticComplexMethod:
+    ignoreSingleWhenExpression: true
+style:
+  active: true
+  NewLineAtEndOfFile:
+    active: false
+  SerialVersionUIDInSerializableClass:
+    active: false
+  UnnecessaryAbstractClass:
+    ignoreAnnotated:
+      - 'Module'
+  MaxLineLength:
+    maxLineLength: 140
+  UnusedPrivateMember:
+    ignoreAnnotated:
+      [ 'Preview' ]
+  MagicNumber:
+    ignoreExtensionFunctions: false
+    ignoreLocalVariableDeclaration: true
+naming:
+  active: true
+  FunctionNaming:
+    ignoreAnnotated:
+      [ 'Composable' ]
+exceptions:
+  active: true
+  TooGenericExceptionCaught:
+    exceptionNames:
+      - 'Error'
+      - 'Exception'
+      - 'RuntimeException'
+      - 'Throwable'
+formatting:
+  active: true
+  MaximumLineLength:
+    maxLineLength: 140
+  ArgumentListWrapping:
+    maxLineLength: 140
+  FunctionReturnTypeSpacing:
+    maxLineLength: 140
+  NoUnusedImports:
+    active: true
+  FinalNewline:
+    active: false
+  CommentSpacing:
+    active: false
+  TrailingCommaOnCallSite:
+    active: true
+  TrailingCommaOnDeclarationSite:
+    active: true
+comments:
+  UndocumentedPublicClass:
+    active: true
+    excludes: [ '**/di/**', '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**' ]
+  UndocumentedPublicFunction:
+    active: true
+    excludes: [ '**/di/**', '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**' ]
+  OutdatedDocumentation:
+    active: true
+    excludes: [ '**/di/**', '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**' ]

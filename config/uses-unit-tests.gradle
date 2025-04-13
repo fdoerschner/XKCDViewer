@@ -1,0 +1,13 @@
+/**
+ * This template is used for modules that want to utilize Unit or Instrumentation tests.
+ *
+ * It includes the common dependencies used for our test setup.
+ */
+
+dependencies {
+    testImplementation(libs.junit)
+
+    testImplementation(libs.androidx.junit)
+
+    testImplementation(libs.androidx.espresso.core)
+}
