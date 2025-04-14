@@ -9,11 +9,11 @@ internal class ComicLoaderImpl(
     private val service: XKCDApiService,
     private val singletonValues: ApiSingletonValues,
 ) : ComicLoader {
-    override suspend fun loadComic(comicType: ComicLoader.ComicType): ApiComic {
-        return when (comicType) {
+    override suspend fun loadComic(type: ComicLoader.ComicType): ApiComic {
+        return when (type) {
             ComicLoader.ComicType.Newest -> loadNewest()
             ComicLoader.ComicType.Random -> loadRandom()
-            is ComicLoader.ComicType.WithId -> loadForId(comicType.id)
+            is ComicLoader.ComicType.WithId -> loadForId(type.id)
         }
     }
 
@@ -46,5 +46,6 @@ internal class ComicLoaderImpl(
                 set(Calendar.DAY_OF_MONTH, day.toInt())
             }.timeInMillis,
         ),
+        transcript = transcript,
     )
 }

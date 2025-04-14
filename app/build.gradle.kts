@@ -43,6 +43,7 @@ android {
 
 dependencies {
     implementation(project(":feature:viewer"))
+    implementation(project(":feature:reader"))
 
     implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)

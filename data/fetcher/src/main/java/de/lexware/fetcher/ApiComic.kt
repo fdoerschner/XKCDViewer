@@ -8,4 +8,5 @@ data class ApiComic(
     val altText: String,
     val title: String,
     val releaseDate: Date,
+    val transcript: String? = null
 )
