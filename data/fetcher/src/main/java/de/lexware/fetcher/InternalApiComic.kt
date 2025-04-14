@@ -10,7 +10,7 @@ data class InternalApiComic(
     @SerialName("link") val link: String,
     @SerialName("year") val year: String,
     @SerialName("news") val news: String,
-    @SerialName("transcript") val transcript: String,
+    @SerialName("transcript") val transcript: String?,
     @SerialName("alt") val alt: String,
     @SerialName("img") val img: String,
     @SerialName("title") val title: String,
